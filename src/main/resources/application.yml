@@ -1,0 +1,32 @@
+eureka:
+  instance:
+    hostname: 47.93.6.45
+    port: 8080
+#    hostname: 192.6.1.41
+#    port: 8761
+    prefer-ip-address: true
+#    instance-id: 124.254.45.82:7010
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+spring:
+  application:
+    name: xchk
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+  mysql:
+      url: jdbc:mysql://192.6.1.102:3306/xhms?characterEncoding=UTF-8
+      name: app
+      password: app82193302
+
+
+#配置日志
+#logging:
+#  #配置日志文件路径
+#  level:
+#    net.xhms.xchk: debug #不同目录下的日志可配置不同级别
+#  #采用相对路径方式将日志文件输出
+#  file: xchk.log
+
